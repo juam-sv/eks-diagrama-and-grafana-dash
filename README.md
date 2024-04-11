@@ -21,7 +21,6 @@ kubectl port-forward service/grafana 3000:3000 --namespace=my-grafana
 ```
 - 2 - Acess o grafana no endereço [localhost:3000](localhost:3000), logue com o usuarioe e senha admin, adicione o datasource "TestData"
 - 3 - importe os arquivos APIs.json, k8s-nodes.json e k8s-pods.json da pasta files em novos dashboards usando o datasource citado acima.
-4 - 
 
 # Componentes
 ## nodes-dashboard
