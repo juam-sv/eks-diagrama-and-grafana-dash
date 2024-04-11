@@ -1,0 +1,172 @@
+apiVersion: 1
+groups:
+    - orgId: 1
+      name: teste
+      folder: funcionais
+      interval: 10m
+      rules:
+        - uid: ddifn5bp27fgga
+          title: Deployment Replicas - Unavailable
+          condition: B
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 21600
+                to: 0
+              datasourceUid: ddifkoo4to5q8c
+              model:
+                datasource:
+                    type: grafana-testdata-datasource
+                    uid: ddifkoo4to5q8c
+                intervalMs: 300000
+                lines: 10
+                maxDataPoints: 100
+                refId: A
+                scenarioId: annotations
+            - refId: B
+              relativeTimeRange:
+                from: 21600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: "1"
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: B
+                type: math
+                window: ""
+          dashboardUid: cdif7uddfu3gga
+          panelId: 11
+          noDataState: NoData
+          execErrState: Error
+          for: 10m
+          annotations:
+            __dashboardUid__: cdif7uddfu3gga
+            __panelId__: "11"
+          labels: {}
+          isPaused: false
+        - uid: adifn9pvvpr0ge
+          title: Pods Failed
+          condition: B
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 21600
+                to: 0
+              datasourceUid: ddifkoo4to5q8c
+              model:
+                datasource:
+                    type: grafana-testdata-datasource
+                    uid: ddifkoo4to5q8c
+                intervalMs: 300000
+                lines: 10
+                maxDataPoints: 100
+                refId: A
+                scenarioId: annotations
+            - refId: B
+              relativeTimeRange:
+                from: 21600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: "1"
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: B
+                type: math
+                window: ""
+          dashboardUid: cdif7uddfu3gga
+          panelId: 14
+          noDataState: NoData
+          execErrState: Error
+          for: 10m
+          annotations:
+            __dashboardUid__: cdif7uddfu3gga
+            __panelId__: "14"
+          labels: {}
+          isPaused: false
+        - uid: fdifoj5boy4n4a
+          title: Requests Allow x Block
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 32545
+                to: -10655
+              datasourceUid: ddifkoo4to5q8c
+              model:
+                datasource:
+                    type: grafana-testdata-datasource
+                    uid: ddifkoo4to5q8c
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: A
+                scenarioId: exponential_heatmap_bucket_data
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - B
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - C
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          dashboardUid: fdifnnyb1ckjkd
+          panelId: 3
+          noDataState: NoData
+          execErrState: Error
+          for: 10m
+          annotations:
+            __dashboardUid__: fdifnnyb1ckjkd
+            __panelId__: "3"
+          labels: {}
+          isPaused: false
